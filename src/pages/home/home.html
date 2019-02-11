@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Examen Chidorris
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let auto of autos" col-6>
+        <ion-card>
+          <img *ngIf="auto.ad.hasOwnProperty('thumbnail')" src="https://img.segundamano.mx/cover/{{auto.ad.thumbnail.path}}">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
