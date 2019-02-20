@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title padding style= "color: #0F1314">
+      Buscar Chidorris
+    </ion-title>
+  </ion-navbar>
+  <ion-searchbar (ionInput)="getItems($event)">
+
+  </ion-searchbar>
+</ion-header>
+
+<ion-content padding style= "color: #0F1314">
+  <ion-list  style= "color: #0F1314">
+    <ion-item *ngFor="let item of items" (click)="clickItems(item)" style= "background-color: #113D70">
+      <ion-thumbnail item-start >
+        <img *ngIf="item.ad.hasOwnProperty('thumbnail')" src="http://img.segundamano.mx/cover/{{item.ad.thumbnail.path}}">
+        <img *ngIf="!item.ad.hasOwnProperty('thumbnail')" src="../assets/imgs/controles.png">
+      </ion-thumbnail>
+      <h5 *ngIf="item.ad.hasOwnProperty('subject')">
+        {{item.ad.subject}}
+      </h5>
+      <h6 *ngIf="item.ad.hasOwnProperty('list_price')">
+        {{item.ad.list_price.label}} {{item.ad.list_price.currency}}
+      </h6>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

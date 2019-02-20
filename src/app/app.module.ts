@@ -7,11 +7,24 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpClientModule } from '@angular/common/http'; //linea importante
+import { ItemsPage } from '../pages/items/items';
+import { TabsPage } from '../pages/tabs/tabs';
+import { FavoritosPage } from '../pages/favoritos/favoritos';
+import { ComputadorasPage } from '../pages/computadoras/computadoras';
+import { ReparacionesPage } from '../pages/reparaciones/reparaciones';
+import { FavoritosProvider } from '../providers/favoritos/favoritos'; //ta shido
+import { BuscarPage } from '../pages/buscar/buscar';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ComputadorasPage,
+    ReparacionesPage,
+    ItemsPage,
+    TabsPage,
+    FavoritosPage,
+    BuscarPage
   ],
   imports: [
     BrowserModule,
@@ -21,12 +34,19 @@ import { HttpClientModule } from '@angular/common/http'; //linea importante
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ComputadorasPage,
+    ReparacionesPage,
+    ItemsPage,
+    TabsPage,
+    FavoritosPage,
+    BuscarPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FavoritosProvider
   ]
 })
 export class AppModule {}

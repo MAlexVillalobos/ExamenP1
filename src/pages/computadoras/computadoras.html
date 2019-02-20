@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title padding style="background-color: #626C76">
-      Juegos Chidorris
+      Compus Chidorris
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="clickBuscar()">
@@ -14,13 +14,13 @@
 <ion-content padding style= "background-color: #0F1314">
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let juego of juegos" col-4>
+      <ion-col *ngFor="let juego of compus" col-4>
         <ion-card (click)="clickItems(juego)" style= "background-color: #113D70">
           <img *ngIf="juego.ad.hasOwnProperty('thumbnail')"
             src="http://img.segundamano.mx/cover/{{juego.ad.thumbnail.path}}">
           <img *ngIf="!juego.ad.hasOwnProperty('thumbnail')" 
             src="../assets/imgs/controles.png">
-          <ion-card-content style= "color: #0F1314">
+          <ion-card-content  style= "color: #0F1314">
             <h1 *ngIf="juego.ad.hasOwnProperty('subject')">
               {{juego.ad.subject}}
             </h1>
